@@ -1,0 +1,28 @@
+Steps taken to create the database in Pearcey.
+
+Imported the data into the Pearcey home.
+Imported db_creation.sql into Pearcey via GitHub
+
+In Bash:
+bash sqlite_initscript.txt
+
+In sqlite3:
+.read db_creation.sql (Imports the shell of the database but created a file named 'filename.db')
+.exit
+
+In Bash:
+mv filename.db sql_assignment.db (Rename filename.db to sql_assignment.db)
+bash sqlite_initscript.txt
+
+In sqlite3:
+.open sql_assignment.db
+.separator "\t"
+.import "|tail -n +2 samples1.txt" sample
+.import "|tail -n +2 seqgroups1.txt" seqgroup
+.import "|tail -n +2 seqtypes.txt" seqtype
+.import "|tail -n +2 sequences1-D18-genomic.txt" sequence
+.import "|tail -n +2 sequences2-D36-RNA.txt" sequence
+.import "|tail -n +2 sequences3-D18-augustusGenePredict.txt" sequence
+.import "|tail -n +2 alignedannot1-D18augPred-vs-NCBI-nr.txt" alignedannot
+.import "|tail -n +2 seqrelations1-D18augPred-vs-D18g.txt" seqrelation
+.import "|tail -n +2 seqrelations2-D36rna-vs-D18g.txt" seqrelation
