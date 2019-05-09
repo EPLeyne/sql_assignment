@@ -1,0 +1,10 @@
+# !/bin/bash
+
+module load sqlite
+
+sqlite3 filename.db
+
+.mode column
+.header on
+
+sqlite3 
