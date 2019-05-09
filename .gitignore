@@ -1,1 +1,9 @@
-*.txt
+alignedannot1-D18augPred-vs-NCBI-nr.txt
+samples1.txt
+seqgroups1.txt
+seqrelations1-D18augPred-vs-D18g.txt
+seqrelations2-D36rna-vs-D18g.txt
+seqtypes.txt
+sequences1-D18-genomic.txt
+sequences2-D36-RNA.txt
+sequences3-D18-augustusGenePredict.txt
