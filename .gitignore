@@ -8,3 +8,5 @@ sequences1-D18-genomic.txt
 sequences2-D36-RNA.txt
 sequences3-D18-augustusGenePredict.txt
 *.db
+.Rproj.user
+*.Rproj
