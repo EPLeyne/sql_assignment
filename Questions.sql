@@ -83,7 +83,7 @@ FROM sequence
 SELECT sequence.id, sequence.name 
 FROM sequence 
     JOIN 
-    (SELECT sequence.id, seqrelation.childSeq
+    (SELECT seqrelation.childSeq
         FROM sequence
             JOIN seqrelation ON sequence.id = seqrelation.parentSeq
         WHERE name = 'D18-gDNA-s1638') AS Child
