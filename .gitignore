@@ -10,3 +10,5 @@ sequences3-D18-augustusGenePredict.txt
 *.db
 .Rproj.user
 *.Rproj
+.Rhistory
+*.ipynb*
