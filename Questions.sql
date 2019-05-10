@@ -78,21 +78,13 @@ FROM sequence
 
 -- 14. Does the sequence named “D18-gDNA-s1638” have any other sequences that align onto it 
 -- (it’ll appear in seqRelation.parentSeq)? List the name(s) of any such sequence(s). 
+-- Solution thanks to YingYing
 
-SELECT seqRelation.id, sequence.name, seqRelation.childSeq 
-FROM seqRelation
-    JOIN sequence ON sequence.id = seqRelation.parentSeq
-WHERE seqRelation.parentSeq =
-    (SELECT sequence.id
-    FROM sequence 
-    WHERE sequence.name = 'D18-gDNA-s1638');
-
-
-SELECT seqRelation.parentSeq, seqRelation.childSeq, sequence.name
-FROM seqRelation
-    JOIN sequence ON sequence.id = seqRelation.parentSeq
-WHERE seqRelation.parentSeq =
-    (SELECT sequence.id
-    FROM sequence 
-    WHERE sequence.name = 'D18-gDNA-s1638')
-    AND Child = sequence.name(seqRelation.childSeq);
+SELECT sequence.id, sequence.name 
+FROM sequence 
+    JOIN 
+    (SELECT sequence.id, seqrelation.childSeq
+        FROM sequence
+            JOIN seqrelation ON sequence.id = seqrelation.parentSeq
+        WHERE name = 'D18-gDNA-s1638') AS Child
+    ON sequence.id = Child.childSeq;
